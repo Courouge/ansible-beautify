@@ -1,0 +1,17 @@
+---
+- name: insert trololo
+  lineinfile: dest=/etc/trololo state=present regexp="{{ trololo }}" insertafter="trololo" line="trololo"
+  notify: restart trololo
+
+
+- name: insert trololo
+  lineinfile:
+    dest: /etc/trololo
+    state: present
+    regexp: "{{ trololo }}"
+    insertafter: "trololo"
+    line: "trololo"
+  notify: restart trololo
+
+- name: space in args module bug
+  lineinfile: dest=/etc/trololo state=present regexp="{{ trololo_ trololo }}" insertafter="tro lolo " line="tro lo lo"
