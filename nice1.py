@@ -33,22 +33,23 @@ for path, subdirs, files in os.walk(dir):
 
 for yml in ymlfiles:
     f = open(yml, "r")
+    composefile = []
     for x in f:
-
-
-      for e in listmodules:
-        if (e + ":") in x:
-            v = x.split(':',1 )
-            module = str(v[0]).strip()
-            arguments = str(v[1])
-            res = dict()
-            res[module] = arguments
-
-            m = ModuleArgsParser(res)
-            mod, args, to = m.parse()
-            print("  "+ module + ":")
-            for x in args:
-                print("    "+ x + ": " + args[x])
-
+      if any((e + ": ") in x for e in listmodules):
+        module = x.split(':',1 )[0].strip()
+        arguments = x.split(':',1 )[1]
+        res = dict()
+        res[module] = arguments
+        m = ModuleArgsParser(res)
+        mod, args, to = m.parse()
+        composefile.append("  "+ module + ":\n")
+        for x in args:
+            composefile.append("    "+ x + ": " + args[x] + "\n")
       else:
-        print(x)
+        composefile.append(x)
+
+
+#print(composefile)
+    with open(yml, 'w') as f:
+        for item in composefile:
+            f.write("%s" % item)
