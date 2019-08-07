@@ -24,6 +24,8 @@ pattern = "*.yml"
 ## load all modules name in list ##
 listmodules = [line.rstrip('\n') for line in open("modules.txt")]
 
+lol = ["  " + s + ":" for s in listmodules]
+
 for path, subdirs, files in os.walk(dir):
     for name in files:
         if fnmatch(name, pattern):
@@ -32,24 +34,38 @@ for path, subdirs, files in os.walk(dir):
 ### open all *.yml ###
 
 for yml in ymlfiles:
-    f = open(yml, "r")
-    composefile = []
-    for x in f:
-      if any((e + ": ") in x for e in listmodules):
+  f = open(yml, "r")
+  composefile = []
+  flag = 0
+  for x in f:
+
+    for e in listmodules:
+
+      if x.startswith("  " + e + ":") == True and len(x.strip()) > len(e + ":"):
         module = x.split(':',1 )[0].strip()
         arguments = x.split(':',1 )[1]
+        flag == 1
+        composefile.append("  "+ module + ":\n")
         res = dict()
         res[module] = arguments
         m = ModuleArgsParser(res)
         mod, args, to = m.parse()
-        composefile.append("  "+ module + ":\n")
         for x in args:
-            composefile.append("    "+ x + ": " + args[x] + "\n")
-      else:
+            if args[x].find('{{') != -1:
+                composefile.append("    "+ x + ": " + '"' + args[x] + '"' + "\n")
+                #print args[x]
+            else:
+               composefile.append("    "+ x + ": " + args[x] + "\n")
+
+    if flag == 1: #or x.startswith('#') or x.startswith('-'):
+        flag == 0
         composefile.append(x)
 
-
-#print(composefile)
-    with open(yml, 'w') as f:
-        for item in composefile:
-            f.write("%s" % item)
+  f.close()
+  print composefile
+'''
+  with open(yml, 'w') as f:
+      for item in composefile:
+          f.write("%s" % item)
+  f.close()
+'''

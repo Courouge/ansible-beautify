@@ -1,28 +1,25 @@
----
 ## test1
-- name: insert trololo
-  lineinfile:
-    dest: /etc/trololo
-    regexp: {{ trololo }}
-    state: present
-    line: trololo
-    insertafter: trololo
-  notify: restart trololo
 
+#- name: insert trololo 3
+#  lineinfile: dest=/etc/trololo state=present regexp="{{ trololo }}" insertafter="trololo" line="trololo"
+#  notify: restart trololo
 
-- name: insert trololo
-  lineinfile:
-    dest: /etc/trololo
-    state: present
-    regexp: "{{ trololo }}"
-    insertafter: "trololo"
-    line: "trololo"
+- name: insert trololo 3
+  lineinfile: dest=/etc/trololo state=present regexp="{{ trololo }}" insertafter="trololo" line="trololo1"
   notify: restart trololo
 
 - name: space in args module bug
-  lineinfile:
+  lineinfile:                                                                                                  
     dest: /etc/trololo
     regexp: {{ trololo_ trololo }}
     line: wtf
     state: present
-    insertafter: HJH
+
+- name: insert trololo
+  lineinfile:
+    dest: /etc/trololo
+    regexp: "{{ trololo }}"
+    state: present
+    line: trololo
+    insertafter: trololo
+  notify: restart trololo

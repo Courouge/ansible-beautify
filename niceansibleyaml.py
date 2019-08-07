@@ -19,6 +19,7 @@ from fnmatch import fnmatch
 
 ymlfiles=[]
 dir = os.getcwd() + "/roles"
+#dir = "/home/courouge/workspace/cagip/awx-fco/ansible-fd-kafka/roles"
 pattern = "*.yml"
 
 ## load all modules name in list ##
@@ -32,23 +33,37 @@ for path, subdirs, files in os.walk(dir):
 ### open all *.yml ###
 
 for yml in ymlfiles:
-    f = open(yml, "r")
-    for x in f:
-
-
+  f = open(yml, "r")
+  composefile = []
+  for x in f:
+    if x.startswith('#', 0) == False:
+      '''
       for e in listmodules:
-        if (e + ":") in x:
-            v = x.split(':',1 )
-            module = str(v[0]).strip()
-            arguments = str(v[1])
-            res = dict()
-            res[module] = arguments
+        if x.startswith("  " + e + ": ") == True:
+      '''
+      if (x.startswith("  " + e + ": ")  for e in listmodules) == True:
+      '''
+          module = x.split(':',1 )[0].strip()
+          arguments = x.split(':',1 )[1]
+          res = dict()
+          res[module] = arguments
+          m = ModuleArgsParser(res)
+          mod, args, to = m.parse()
+          composefile.append("  "+ module + ":\n")
+          for x in args:
+              if args[x].find('{{') != -1:
+                  composefile.append("    "+ x + ": " + '"' + args[x] + '"' + "\n")
+                  #print args[x]
+              else:
+                  composefile.append("    "+ x + ": " + args[x] + "\n")
+        else:
+          composefile.append(x)
+    else:
+      composefile.append(x)
 
-            m = ModuleArgsParser(res)
-            mod, args, to = m.parse()
-            print("  "+ module + ":")
-            for x in args:
-                print("    "+ x + ": " + args[x])
+  print composefile
 
-      else:
-        print(x)
+    with open(yml, 'w') as f:
+        for item in composefile:
+            f.write("%s" % item)
+    f.close()
