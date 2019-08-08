@@ -1,0 +1,34 @@
+## trololo
+
+#- name: Insert trololo
+#  lineinfile: dest=/etc/trololo state=present regexp="{{ trololo }}" insertafter="trololo" line="trololo"
+#  notify: restart trololo
+
+- name: Insert trololo
+  lineinfile: dest=/etc/trololo state=present regexp="{{ trololo }}" insertafter="trololo" line="trololo"
+  notify: restart trololo
+
+- name: Trololo
+  lineinfile:
+    dest: /etc/trololo
+    regexp: {{ trololo }}
+    line: yolo
+    state: present
+
+- name: Insert again trololo
+  lineinfile:
+    dest: /etc/trololo
+    regexp: "{{ trololo }}"
+    state: present
+    line: trololo
+    insertafter: trololo
+  notify: restart trololo
+
+- name: Check trololo
+  include_role: trololo.yml
+  run_once: true
+  when: playbook_event == "trololo"
+
+- name: Install trololo
+  include: install.yml
+  when: yolo is defined and trololo == true
