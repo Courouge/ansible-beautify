@@ -3,3 +3,7 @@
 - name: insert yolo
   lineinfile: dest=/etc/yolo state=present regexp="{{ yolo }}" insertafter="yolo" line="yolo"
   notify: restart yolo
+
+- name: Active yolo
+  include: yolo.yml
+  when: yolo is defined and yolo == true

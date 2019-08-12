@@ -51,7 +51,8 @@ for yml in ymlfiles:
         mod, args, to = m.parse()
         for x in args:
             if x == "_raw_params" :
-                composefile.append("    " + args[x] + "\n")
+                del composefile[-1]
+                composefile.append("  " + module + ": " + args[x] + "\n")
             else:
                 if args[x].find('{{') != -1 and args[x].find('}}') != -1 :
                     composefile.append("    "+ x + ": " + '"' + args[x] + '"' + "\n")
