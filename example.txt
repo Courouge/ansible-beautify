@@ -43,3 +43,6 @@
 
 - name: Insert trololo
   lineinfile : dest=/etc/trololo state=present regexp="{{ trololo }}" insertafter="trololo" line="trololo"
+
+- name: Yolo
+  replace: dest=/etc/netconfig regexp="^udp6(.*)" replace="# ansible_managed\n#udp6\1"
