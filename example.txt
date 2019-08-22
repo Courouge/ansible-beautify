@@ -36,3 +36,10 @@
 - name: Active yolo
   include: yolo.yml
   when: yolo is defined and yolo == true
+
+#### to do
+- name: yolo
+  virt_net: command=define name={{ yolo }} xml='{{ lookup("template", "{{ yolo }}") }}'
+
+- name: Insert trololo
+  lineinfile : dest=/etc/trololo state=present regexp="{{ trololo }}" insertafter="trololo" line="trololo"
