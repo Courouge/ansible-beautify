@@ -1,2 +1,4 @@
 Flask==0.10.1
 Flask-WTF
+flask-bootstrap==2.3.2.2
+#flask_restful
