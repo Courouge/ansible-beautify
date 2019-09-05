@@ -2,34 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c11f5ed-9d56-487f-a8b4-978d0b8f6ebf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ansible/errors/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ansible/errors/yaml_strings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ansible/parsing/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ansible/parsing/ajson.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ansible/parsing/dataloader.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ansible/parsing/metadata.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ansible/parsing/mod_args.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ansible/parsing/plugin_docs.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ansible/parsing/quoting.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ansible/parsing/splitter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ansible/parsing/utils/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ansible/parsing/utils/addresses.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ansible/parsing/utils/jsonify.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ansible/parsing/utils/yaml.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ansible/parsing/vault/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ansible/parsing/yaml/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ansible/parsing/yaml/constructor.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ansible/parsing/yaml/dumper.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ansible/parsing/yaml/loader.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ansible/parsing/yaml/objects.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-api/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-api/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-api/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-api/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/react-api/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-api/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-api/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-api/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/react-api/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-api/src/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
