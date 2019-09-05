@@ -9,16 +9,10 @@ from ansible.errors import AnsibleParserError
 from ansible.parsing.mod_args import ModuleArgsParser
 from fnmatch import fnmatch
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request, abort
+
 app = Flask(__name__)
-tasks =[
-    {
-        'input_data': """- name: Insert trololo
-                   lineinfile: dest=/etc/trololo state=present regexp="{{ trololo }}" insertafter="trololo" line="trololo"
-                   notify: restart trololo""",
-        'output_data': ""
-    }
-]
+tasks =[]
 def cleanAnsible(x):
   f = StringIO(x)
   ymlfiles=[]
@@ -64,16 +58,21 @@ listmodules=[]
 for x in f:
   listmodules.append(x[:-1])
 f.close()
+
 ### get arg cmd form call ###
-parser = argparse.ArgumentParser()
-parser.add_argument("input", help="ansible text to clean")
-args = parser.parse_args()
-print cleanAnsible(args.input)
+#parser = argparse.ArgumentParser()
+#parser.add_argument("input", help="ansible text to clean")
+#args = parser.parse_args()
+#print cleanAnsible(args.input)
 
 
-@app.route('/todo/api/v1.0/tasks', methods=['GET'])
-def get_tasks():
-    return jsonify({'tasks': tasks})
+@app.route('/api', methods=['POST'])
+def post_request():
+    data = request.get_json()
+    print(data)
+    print('Hello world!')
+
+    return "ok"
 
 if __name__ == '__main__':
     app.run(debug=True)
