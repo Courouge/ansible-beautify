@@ -17,44 +17,39 @@ class App extends Component {
     this.setState({value: event.target.value});
   }
 
- handleSubmit(event) {
-    var payload = {
-        a: 1,
-        b: 2
-    };
-    var data = new FormData();
-    data.append( "json", JSON.stringify( payload ) );
-
-    fetch('http://localhost:5000/api', {
+  handleSubmit(event) {
+    event.preventDefault();
+    var data = "{ \"in\": \"" + this.state.value + "\"}" ;
+    console.log('submit');
+    console.log(data);
+    fetch('http://localhost:5000/api/', {
       method: 'POST',
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-        },
-      body: data
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(data),
     })
-  }
+      .then(res => res.json())
+      .then(res => console.log(res));
+}
 
  render() {
     return (
     <div className="App">
-      <form onSubmit={this.handleSubmit} method="POST" action="http://localhost:5000/api">
+      <form onSubmit={this.handleSubmit} method="POST" action="http://localhost:5000/api"></form>
         <div className="row">
           <div className="col-md-5">
-            <textarea className="form-control" value={this.state.value} onChange={this.handleChange} id="exampleFormControlTextarea1" rows="15"/>
+            <textarea className="form-control" value={this.state.value} onChange={this.handleChange} id="exampleFormControlTextarea1" rows="30"/>
           </div>
-
           <div className="col-md-2">
-            <span className="align-middle">
-                <input type="submit" value="Envoyer" />
-            </span>
+                <br/><br/><br/><br/><br/><br/>
+                <input type="submit" value="Process" class="btn btn-pill btn-light btn-block btn-lg" />
           </div>
-
           <div className="col-md-5">
-              <textarea className="form-control" id="exampleFormControlTextarea1" rows="15"/>
+              <textarea className="form-control" id="exampleFormControlTextarea1" rows="30"/>
           </div>
         </div>
-      </form>
+
     </div>
     );
   }

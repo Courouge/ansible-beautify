@@ -1,0 +1,13 @@
+# install nodejs
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo apt install npm
+cd react-api/
+sudo npm install
+npm start
+
+# install python
+apt-get install python-dev
+apt-get install python-pip
+pip install ansible
+pip install flask

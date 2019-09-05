@@ -3,7 +3,8 @@
 # coding: utf-8
 import os
 import argparse
-
+import json
+from flask_cors import CORS
 from cStringIO import StringIO
 from ansible.errors import AnsibleParserError
 from ansible.parsing.mod_args import ModuleArgsParser
@@ -12,6 +13,7 @@ from fnmatch import fnmatch
 from flask import Flask, jsonify, request, abort
 
 app = Flask(__name__)
+CORS(app)
 tasks =[]
 def cleanAnsible(x):
   f = StringIO(x)
@@ -66,12 +68,11 @@ f.close()
 #print cleanAnsible(args.input)
 
 
-@app.route('/api', methods=['POST'])
-def post_request():
-    data = request.get_json()
+@app.route('/api/', methods=['POST'])
+def api_post():
+    data = request.json
     print(data)
     print('Hello world!')
-
     return "ok"
 
 if __name__ == '__main__':
