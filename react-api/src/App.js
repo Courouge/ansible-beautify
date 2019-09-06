@@ -38,14 +38,14 @@ class App extends Component {
       <form onSubmit={this.handleSubmit} method="POST" action="http://localhost:5000/api/">
         <div className="row">
           <div className="col-md-5">
-            <textarea className="form-control" value={this.state.value} onChange={this.handleChange} id="exampleFormControlTextarea1" rows="30"/>
+            <textarea className="form-control" value={this.state.value} onChange={this.handleChange} id="exampleFormControlTextarea1" rows="16"/>
           </div>
           <div className="col-md-2">
                 <br/><br/><br/><br/><br/><br/>
                 <input type="submit" value="Process" class="btn btn-pill btn-light btn-block btn-lg" />
           </div>
           <div className="col-md-5">
-              <textarea className="form-control" value={this.state.res.out} id="exampleFormControlTextarea1" rows="30"/>
+              <textarea className="form-control text-muted" value={this.state.res.out} id="exampleFormControlTextarea1" rows="16"/>
           </div>
         </div>
       </form>

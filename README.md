@@ -3,3 +3,4 @@ Support all module !
 If you have your own library, no problem add it on the modules.txt file :)
 
 Bug => Line with explicite \n
+Bug => no check on arguments name
