@@ -14,7 +14,7 @@ from flask import Flask, jsonify, request, abort
 
 app = Flask(__name__)
 CORS(app)
-tasks =[]
+
 def cleanAnsible(x):
   f = StringIO(x)
   ymlfiles=[]
@@ -52,8 +52,6 @@ def cleanAnsible(x):
         composefile.pop(len(composefile)-1)
   return composefile
 
-
-
 ### list ansible modules ###
 f = open("modules.txt", "r")
 listmodules=[]
@@ -61,19 +59,10 @@ for x in f:
   listmodules.append(x[:-1])
 f.close()
 
-### get arg cmd form call ###
-#parser = argparse.ArgumentParser()
-#parser.add_argument("input", help="ansible text to clean")
-#args = parser.parse_args()
-#print cleanAnsible(args.input)
-
-
-@app.route('/api/', methods=['POST'])
+@app.route('/api/', methods=['GET','POST'])
 def api_post():
     data = request.json
-    print(data)
-    print('Hello world!')
-    return "ok"
+    return '{ "out":' + json.dumps(''.join(cleanAnsible((str(data['in']))))) + '}'
 
 if __name__ == '__main__':
     app.run(debug=True)
