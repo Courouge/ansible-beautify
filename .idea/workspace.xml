@@ -4,10 +4,7 @@
     <list default="true" id="5c11f5ed-9d56-487f-a8b4-978d0b8f6ebf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/react-api/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/react-api/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-api/public/background.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/react-api/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/react-api/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-api/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/react-api/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-api/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-api/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/react-api/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/react-api/src/index.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
