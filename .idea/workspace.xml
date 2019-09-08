@@ -3,25 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="5c11f5ed-9d56-487f-a8b4-978d0b8f6ebf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/linerAPI.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/modules.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onelinerkiller.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/onelinerkiller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/react-api/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/react-api/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-api/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-api/public/background.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/react-api/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/react-api/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-api/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/react-api/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/react-api/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-api/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requerement.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirement.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/.dockerignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Dockerfileold" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/appold.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/templates/hello.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/templates/main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-api/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/react-api/src/index.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

@@ -42,9 +42,15 @@ class App extends Component {
           <div className="col-md-2">
                 <br/><br/><br/><br/><br/><br/>
                 <input type="submit" value="Process" class="btn btn-pill btn-light btn-block btn-lg" />
+                <br/><br/><br/>
+                <div class="text-center">
+                    <a href="https://fr.linkedin.com/in/floriancourouge" target="_blank" rel="noopener" >
+                      About me
+                    </a>
+                </div>
           </div>
           <div className="col-md-5">
-              <textarea className="form-control text-muted" value={this.state.res.out} id="exampleFormControlTextarea1" rows="16"/>
+                <textarea className="form-control text-muted" value={this.state.res.out} id="exampleFormControlTextarea2" rows="16"/>
           </div>
         </div>
       </form>
