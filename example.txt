@@ -43,12 +43,3 @@
 
 - name: Yolo
   replace: dest=/etc/netconfig regexp="^udp6(.*)" replace="# ansible_managed\n#udp6\1"
-
-
-RestFull:
-
-{
-data: '- name: Insert trololo
-  lineinfile: dest=/etc/trololo state=present regexp="{{ trololo }}" insertafter="trololo" line="trololo"
-  notify: restart trololo'
-}

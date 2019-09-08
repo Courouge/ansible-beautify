@@ -5,7 +5,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          value: '- name: Insert trololo' + '\n' + '  lineinfile: dest=/etc/trololo state=present regexp="{{ trololo }}" insertafter="trololo" line="trololo"' + '\n' + '  notify: restart trololo' + '\n',
+          value: '- name: Insert trololo\n  lineinfile: dest=/etc/trololo state=present regexp="{{ trololo }}" insertafter="trololo" line="trololo"\n  notify: restart trololo\n',
           res: ''
         };
 
@@ -20,8 +20,7 @@ class App extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log('submit');
-    fetch('http://localhost:5000/api/', {
+    fetch(process.env.REACT_APP_API, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -35,7 +34,7 @@ class App extends Component {
  render() {
     return (
     <div className="App">
-      <form onSubmit={this.handleSubmit} method="POST" action="http://localhost:5000/api/">
+      <form onSubmit={this.handleSubmit} method="POST">
         <div className="row">
           <div className="col-md-5">
             <textarea className="form-control" value={this.state.value} onChange={this.handleChange} id="exampleFormControlTextarea1" rows="16"/>

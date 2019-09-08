@@ -36,9 +36,7 @@ def cleanAnsible(x):
             res = dict()
             flag = 1
             res[module] = arguments
-
             m = ModuleArgsParser(res)
-            #break
             mod, args, to = m.parse()
             for x in args:
                 if x == "_raw_params" :
@@ -55,13 +53,8 @@ def cleanAnsible(x):
             flag = 0
             composefile.pop(len(composefile)-1)
 
-
   except (AnsibleParserError):
-      print sys.exc_info()[0]
       composefile = "Error Ansible Syntax"
-
-  print composefile
-
   return composefile
 
 
@@ -79,5 +72,4 @@ def api_post():
     res = cleanAnsible((str(data['in'])))
     return '{ "out":' + json.dumps(''.join(res)) + '}'
 if __name__ == '__main__':
-    app.run(debug=True)
-
+    app.run(host= '0.0.0.0', debug=True)
