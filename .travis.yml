@@ -23,6 +23,8 @@
 #  - docker-compose rm -f
 #
 
+language: python
+
 sudo: required
 
 services:
