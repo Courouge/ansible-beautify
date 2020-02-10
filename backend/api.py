@@ -43,10 +43,11 @@ def cleanAnsible(x):
                     del composefile[-1]
                     composefile.append("  " + module + ": " + args[x] + "\n")
                 else:
-                    if args[x].find('{{') != -1 and args[x].find('}}') != -1 :
-                        composefile.append("    "+ x + ": " + '"' + args[x] + '"' + "\n")
+                    tmp = args[x].replace("\n", "\\n")
+                    if tmp.find('{{') != -1 and tmp.find('}}') != -1 :
+                        composefile.append("    "+ x + ": " + '"' + tmp + '"' + "\n")
                     else:
-                        composefile.append("    "+ x + ": " + args[x] + "\n")
+                        composefile.append("    "+ x + ": " + tmp + "\n")
             break
         composefile.append(x)
         if flag == 1:

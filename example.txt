@@ -22,7 +22,9 @@
   notify: restart trololo
 
 - name: Check trololo
-  include_role: trololo.yml
+  include_role:
+    name: trololo
+    tasks_from: troll
   run_once: true
   when: playbook_event == "trololo"
 

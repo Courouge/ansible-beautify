@@ -44,7 +44,7 @@ class App extends Component {
                 <input type="submit" value="Process" class="btn btn-pill btn-light btn-block btn-lg" />
                 <br/><br/><br/>
                 <div class="text-center">
-                    <a href="https://fr.linkedin.com/in/floriancourouge" target="_blank" rel="noopener" >
+                    <a href="https://fr.linkedin.com/in/floriancourouge">
                       About me
                     </a>
                 </div>

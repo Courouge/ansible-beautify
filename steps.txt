@@ -12,7 +12,6 @@ apt-get install python-pip
 pip install ansible
 pip install flask
 
-
 # docker reactjs
 docker build -t sample:dev .
 docker run -v ${PWD}:/app -v /app/node_modules -p 3000:3000 --rm sample:dev
