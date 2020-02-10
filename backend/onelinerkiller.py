@@ -9,7 +9,7 @@ from ansible.parsing.mod_args import ModuleArgsParser
 from fnmatch import fnmatch
 
 ### list ansible modules ###
-f = open("modules.txt", "r")
+f = open(os.getcwd() + "/" + "modules.txt", "r")
 listmodules=[]
 for x in f:
   listmodules.append(x[:-1])
@@ -68,4 +68,4 @@ for yml in ymlfiles:
       for item in composefile:
           f.write("%s" % item)
   f.close()
-print "done"
+print("done")

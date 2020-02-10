@@ -61,7 +61,7 @@ def cleanAnsible(x):
 
 
 ### list ansible modules ###
-f = open("modules.txt", "r")
+f = open(os.getcwd() + "/" + "modules.txt", "r")
 listmodules=[]
 for x in f:
   listmodules.append(x[:-1])
