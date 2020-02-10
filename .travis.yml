@@ -1,3 +1,7 @@
+language: python
+
+sudo: required
+
 env:
   - DOCKER_COMPOSE_VERSION=1.4.2
 
@@ -7,9 +11,11 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
 
-before_script:
-  - docker-compose up -d --build
+install:
+  - docker-compose build
+  - docker-compose up -d
 script:
-  - docker-compose up
+  - /bin/bash bin/run-travis
 after_script:
-  - docker-compose down
+  - docker-compose stop
+  - docker-compose rm -f
