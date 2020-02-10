@@ -9,6 +9,7 @@ before_install:
 
 before_script:
   - docker-compose up -d --build
-
+script:
+  - docker-compose up
 after_script:
   - docker-compose down
