@@ -2,51 +2,36 @@
 #
 #sudo: required
 #
+#services:
+#  - docker
+#
 #env:
-#  - DOCKER_COMPOSE_VERSION=1.4.2
+#  DOCKER_COMPOSE_VERSION: 1.23.2
 #
 #before_install:
-#  - sudo apt-get update
 #  - sudo rm /usr/local/bin/docker-compose
 #  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
 #  - chmod +x docker-compose
 #  - sudo mv docker-compose /usr/local/bin
 #
 #install:
-#  - docker-compose pull
-#  - docker-compose build
-#  - docker-compose start
-#script:
-#  - /bin/bash bin/run-travis
-#after_script:
-#  - docker-compose stop
-#  - docker-compose rm -f
+#  - pip install -r backend/requirements.txt
 #
+#before_script:
+#  - docker-compose up -d --build
+#
+#script:
+#  - python -m pytest
+#
+#after_script:
+#  - docker-compose down
 
-language: python
-
-sudo: required
-
-services:
-  - docker
-
-env:
-  DOCKER_COMPOSE_VERSION: 1.23.2
-
-before_install:
-  - sudo rm /usr/local/bin/docker-compose
-  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
-  - chmod +x docker-compose
-  - sudo mv docker-compose /usr/local/bin
-
-install:
-  - pip install -r backend/requirements.txt
-
-before_script:
-  - docker-compose up -d --build
-
-script:
-  - python -m pytest
-
-after_script:
-  - docker-compose down
+matrix:
+  include:
+    - language: python
+      python: 2.7
+      before_script:
+        - cd backend
+      script:
+        - pip install -r requirements.txt
+        - make check
