@@ -8,6 +8,12 @@ from ansible.errors import AnsibleParserError
 from ansible.parsing.mod_args import ModuleArgsParser
 from fnmatch import fnmatch
 
+def inc(x):
+    return x + 1
+
+def test_answer():
+    assert inc(4) == 5
+
 ### list ansible modules ###
 f = open(os.getcwd() + "/" + "modules.txt", "r")
 listmodules=[]

@@ -34,4 +34,4 @@ matrix:
         - cd backend
       script:
         - pip install -r requirements.txt
-        - make check
+        - pytest onelinerkiller.py
