@@ -1,26 +1,36 @@
 {
-  "name": "react-api",
-  "version": "0.1.0",
+  "name": "ansible-beautify-frontend",
+  "version": "1.0.0",
+  "description": "Modern web interface for Ansible Beautify - Transform one-liner Ansible tasks into beautiful YAML",
   "private": true,
+  "keywords": ["ansible", "yaml", "beautify", "formatter", "devops"],
+  "author": "Florian Courouge",
+  "license": "MIT",
+  "homepage": "https://github.com/Courouge/ansible-beautify",
   "dependencies": {
-    "axios": "^0.21.1",
-    "bootstrap": "^4.3.1",
-    "jquery": "^3.4.1",
-    "popper.js": "^1.15.0",
-    "qs-stringify": "^1.1.0",
-    "react": "^16.9.0",
-    "react-bootstrap": "^1.0.0-beta.12",
-    "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
+    "axios": "^1.6.0",
+    "bootstrap": "^5.3.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.9.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "analyze": "npm run build && npx serve -s build",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "format": "prettier --write src/",
+    "check-updates": "npx npm-check-updates"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
@@ -33,5 +43,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.5.1",
+    "prettier": "^3.0.3"
   }
 }

@@ -2,43 +2,122 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#AAAAAA" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
+    
+    <!-- SEO Meta Tags -->
+    <title>🎨 Ansible Beautify - Transform One-liner Tasks to Beautiful YAML</title>
+    <meta name="description" content="Transform your condensed Ansible tasks into clean, readable YAML format. Perfect for learning, code review, and documentation. Free web-based tool supporting all Ansible modules." />
+    <meta name="keywords" content="ansible, yaml, beautify, formatter, devops, automation, infrastructure, configuration management, playbook" />
+    <meta name="author" content="Florian Courouge" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="🎨 Ansible Beautify - Transform One-liner Tasks to Beautiful YAML" />
+    <meta property="og:description" content="Transform your condensed Ansible tasks into clean, readable YAML format. Free web-based tool supporting all Ansible modules." />
+    <meta property="og:url" content="https://github.com/Courouge/ansible-beautify" />
+    <meta property="og:site_name" content="Ansible Beautify" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="🎨 Ansible Beautify - Transform One-liner Tasks to Beautiful YAML" />
+    <meta name="twitter:description" content="Transform your condensed Ansible tasks into clean, readable YAML format. Free web-based tool supporting all Ansible modules." />
+    
+    <!-- Favicon and Icons -->
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png" />
+    
+    <!-- Theme and Color -->
+    <meta name="theme-color" content="#3498db" />
+    <meta name="msapplication-TileColor" content="#3498db" />
+    
+    <!-- Bootstrap 5 CSS -->
+    <link 
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+      rel="stylesheet" 
+      integrity="sha384-9ndCyUa5z1Z3ydH2xEaZCLuFWqZTWA7O6Z5LjmJzZNowYJe5W3R1ZZ8aIdZQ8oK2" 
+      crossorigin="anonymous"
     />
-    <link rel="apple-touch-icon" href="logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" 
+      rel="stylesheet"
+    />
+    
+    <!-- Web App Manifest -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Ansible Beautify",
+      "description": "Transform one-liner Ansible tasks into beautiful, readable YAML format",
+      "url": "https://github.com/Courouge/ansible-beautify",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Florian Courouge",
+        "url": "https://fr.linkedin.com/in/floriancourouge"
+      }
+    }
+    </script>
+    
+    <!-- Additional Performance Hints -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
   </head>
   <body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <div style="text-align: center; padding: 2rem; font-family: Arial, sans-serif;">
+        <h1>🎨 Ansible Beautify</h1>
+        <p>You need to enable JavaScript to run this application.</p>
+        <p>This tool helps transform one-liner Ansible tasks into beautiful YAML format.</p>
+        <p>Please enable JavaScript in your browser and refresh the page.</p>
+      </div>
+    </noscript>
+    
+    <!-- Main Application Container -->
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    
+    <!-- Bootstrap 5 JavaScript Bundle -->
+    <script 
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" 
+      crossorigin="anonymous">
+    </script>
+    
+    <!-- Loading State Improvement -->
+    <style>
+      /* Loading animation for better UX */
+      #root:empty::after {
+        content: "🎨 Loading Ansible Beautify...";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: 'Inter', sans-serif;
+        font-size: 1.2rem;
+        color: #3498db;
+        animation: pulse 1.5s infinite;
+      }
+      
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+      }
+    </style>
   </body>
 </html>
