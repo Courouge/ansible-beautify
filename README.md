@@ -25,6 +25,16 @@ Ansible Beautify is a web-based tool that transforms condensed, hard-to-read Ans
 - 📝 **Documentation**: Generate clean examples for documentation
 - 🎯 **Best Practices**: Follow Ansible YAML formatting standards
 
+## 🖥️ Interface Preview
+
+<div align="center">
+
+![Ansible Beautify Interface](docs/images/ansible-beautify-interface.png)
+
+*Clean and intuitive web interface for transforming Ansible one-liners*
+
+</div>
+
 ## 🔄 Transformation Example
 
 ### Before (Hard to read) 😵
