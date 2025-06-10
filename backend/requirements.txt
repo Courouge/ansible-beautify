@@ -4,7 +4,7 @@ Flask==3.0.0
 Flask-CORS==4.0.0
 
 # HTTP client for health checks
-requests==2.31.0
+requests==2.32.4
 
 # Ansible core (for parsing modules)
 ansible-core==2.15.5
